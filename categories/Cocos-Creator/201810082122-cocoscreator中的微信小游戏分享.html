@@ -119,25 +119,29 @@
 
 
 
-  <meta name="description" content="记一次iOS上踩到的坑，替换修复bug后的sdk后无法编译通过，最后发现是没有使用git lfs pull的锅。  12Undefined symbols for architecture arm64:file built for unknown-unsupported file format (0x56 0x65 0x72 0x73 0x69 0x6F 0x6E 0x73 0x2F 0x43 0">
+  <meta name="description" content="前言在论坛上看到有很多人问关于微信分享，加之公司叫把一款使用quick开发的游戏改微信小游戏也用到了分享  所以我就在这里分享一下如何使用，希望能对有需要的人产生一些帮助  效果预览我们先来看一下最终效果…..">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS-arm64 but attempting to link with file built for unknown-unsupported file">
-<meta property="og:url" content="https://blog.liuwenkai.cn/categories/%E5%85%B6%E5%AE%83/202209021314undefined-ios-arm64-but-attempting-to-link-with-file-built-for-unknown-unsupported-file.html">
+<meta property="og:title" content="CocosCreator中的微信小游戏分享">
+<meta property="og:url" content="https://blog.liuwenkai.cn/categories/Cocos-Creator/201810082122-cocoscreator%E4%B8%AD%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%88%86%E4%BA%AB.html">
 <meta property="og:site_name" content="Kai&#39;s Blog.">
-<meta property="og:description" content="记一次iOS上踩到的坑，替换修复bug后的sdk后无法编译通过，最后发现是没有使用git lfs pull的锅。  12Undefined symbols for architecture arm64:file built for unknown-unsupported file format (0x56 0x65 0x72 0x73 0x69 0x6F 0x6E 0x73 0x2F 0x43 0">
+<meta property="og:description" content="前言在论坛上看到有很多人问关于微信分享，加之公司叫把一款使用quick开发的游戏改微信小游戏也用到了分享  所以我就在这里分享一下如何使用，希望能对有需要的人产生一些帮助  效果预览我们先来看一下最终效果…..">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-02T05:14:58.000Z">
-<meta property="article:modified_time" content="2022-09-02T05:14:58.000Z">
+<meta property="og:image" content="https://forum.cocos.com/uploads/default/original/3X/c/d/cd385cf64dd0f7268b0b1585a7544284a665cd51.png">
+<meta property="og:image" content="https://forum.cocos.com/uploads/default/original/3X/a/b/ab4021bbd10d6d97b1cbf618d2efb67158fa8ce2.png">
+<meta property="og:image" content="https://forum.cocos.com/uploads/default/original/3X/7/b/7be75f7153000a598fd42c78ebb92bece155cc9c.png">
+<meta property="article:published_time" content="2018-10-08T13:22:03.000Z">
+<meta property="article:modified_time" content="2018-10-08T13:22:03.000Z">
 <meta property="article:author" content="刘文凯">
-<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="微信分享">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://forum.cocos.com/uploads/default/original/3X/c/d/cd385cf64dd0f7268b0b1585a7544284a665cd51.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.liuwenkai.cn/categories/其它/202209021314undefined-ios-arm64-but-attempting-to-link-with-file-built-for-unknown-unsupported-file.html"/>
+  <link rel="canonical" href="https://blog.liuwenkai.cn/categories/Cocos-Creator/201810082122-cocoscreator中的微信小游戏分享.html"/>
 
 
 
@@ -147,7 +151,7 @@
   };
 </script>
 
-  <title>iOS-arm64 but attempting to link with file built for unknown-unsupported file | Kai's Blog.</title>
+  <title>CocosCreator中的微信小游戏分享 | Kai's Blog.</title>
   
 
 
@@ -390,7 +394,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.liuwenkai.cn/categories/%E5%85%B6%E5%AE%83/202209021314undefined-ios-arm64-but-attempting-to-link-with-file-built-for-unknown-unsupported-file.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.liuwenkai.cn/categories/Cocos-Creator/201810082122-cocoscreator%E4%B8%AD%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%88%86%E4%BA%AB.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘文凯">
@@ -407,7 +411,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS-arm64 but attempting to link with file built for unknown-unsupported file
+          <h1 class="post-title" itemprop="name headline">CocosCreator中的微信小游戏分享
               
             
           </h1>
@@ -432,7 +436,7 @@
                 
               
 
-              <time title="创建时间：2022-09-02 13:14:58" itemprop="dateCreated datePublished" datetime="2022-09-02T13:14:58+08:00">2022-09-02</time>
+              <time title="创建时间：2018-10-08 21:22:03" itemprop="dateCreated datePublished" datetime="2018-10-08T21:22:03+08:00">2018-10-08</time>
             
 
             
@@ -450,7 +454,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%85%B6%E5%AE%83/" itemprop="url" rel="index"><span itemprop="name">其它</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Cocos-Creator/" itemprop="url" rel="index"><span itemprop="name">Cocos Creator</span></a></span>
 
                 
                 
@@ -484,16 +488,20 @@
       
 
       
-        <pre><code>记一次iOS上踩到的坑，替换修复bug后的sdk后无法编译通过，最后发现是没有使用git lfs pull的锅。
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><pre><code>在论坛上看到有很多人问关于微信分享，加之公司叫把一款使用quick开发的游戏改微信小游戏也用到了分享
+
+所以我就在这里分享一下如何使用，希望能对有需要的人产生一些帮助
 </code></pre>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Undefined symbols <span class="keyword">for</span> architecture arm64:</span><br><span class="line">file built <span class="keyword">for</span> unknown-unsupported file format (0x56 0x65 0x72 0x73 0x69 0x6F 0x6E 0x73 0x2F 0x43 0x75 0x72 0x72 0x65 0x6E 0x74)</span><br></pre></td></tr></table></figure>
+<h3 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h3><p>我们先来看一下最终效果…..</p>
 <a id="more"></a>
+<p><img src="https://forum.cocos.com/uploads/default/original/3X/c/d/cd385cf64dd0f7268b0b1585a7544284a665cd51.png" alt="image"></p>
+<h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><h4 id="本地文件目录"><a href="#本地文件目录" class="headerlink" title="本地文件目录"></a>本地文件目录</h4><p>{项目目录}&#x2F;assets&#x2F;resources&#x2F;share&#x2F;</p>
+<p><img src="https://forum.cocos.com/uploads/default/original/3X/a/b/ab4021bbd10d6d97b1cbf618d2efb67158fa8ce2.png" alt="image">、</p>
+<h4 id="远程文件目录（建议整个res上传）"><a href="#远程文件目录（建议整个res上传）" class="headerlink" title="远程文件目录（建议整个res上传）"></a>远程文件目录（建议整个res上传）</h4><p>{远程服务器地址}&#x2F;res&#x2F;</p>
+<p><img src="https://forum.cocos.com/uploads/default/original/3X/7/b/7be75f7153000a598fd42c78ebb92bece155cc9c.png" alt="image"></p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">test() &#123;</span><br><span class="line">    let title &#x3D; &quot;亲，您的智商已欠费，请充值。&quot;;</span><br><span class="line">    let fileName &#x3D; &quot;1.jpg&quot;</span><br><span class="line">    let message &#x3D; &#123;</span><br><span class="line">        title: &#96;$&#123;title&#125;&#96;,</span><br><span class="line">        imageUrl: this.getURL(&#96;resources&#x2F;share&#x2F;$&#123;fileName&#125;&#96;)</span><br><span class="line">    &#125;;</span><br><span class="line">    (&lt;any&gt;window).wx.shareAppMessage(message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getURL(url) &#123;</span><br><span class="line">    url &#x3D; cc.url.raw(url);</span><br><span class="line">    if (cc.loader.md5Pipe) &#123;</span><br><span class="line">        url &#x3D; cc.loader.md5Pipe.transformURL(url);</span><br><span class="line">    &#125;</span><br><span class="line">    try &#123;</span><br><span class="line">        this.wx.getFileSystemManager().accessSync(url)</span><br><span class="line">    &#125; catch (error) &#123;</span><br><span class="line">        url &#x3D; window.wxDownloader.REMOTE_SERVER_ROOT + &quot;&#x2F;&quot; + url;</span><br><span class="line">    &#125;</span><br><span class="line">    return url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ld: warning: ignoring file /Volumes/Data/c1/ios/ios_xmjz/HLSDK/AppsFlyerLib.framework/AppsFlyerLib, building <span class="keyword">for</span> iOS-arm64 but attempting to link with file built <span class="keyword">for</span> unknown-unsupported file format ( 0x56 0x65 0x72 0x73 0x69 0x6F 0x6E 0x73 0x2F 0x43 0x75 0x72 0x72 0x65 0x6E 0x74 )</span><br><span class="line">ld: warning: arm64 <span class="keyword">function</span> not 4-byte aligned: _unwind_tester from /Volumes/Data/c1/ios/ios_xmjz/Libraries/libiPhone-lib.a(unwind_test_arm64.o)</span><br><span class="line">ld: warning: Could not find or use auto-linked framework <span class="string">'FBLPromises'</span></span><br><span class="line">Undefined symbols <span class="keyword">for</span> architecture arm64:</span><br><span class="line">  <span class="string">"_OBJC_CLASS_<span class="variable">$_AppsFlyerLib</span>"</span>, referenced from:</span><br><span class="line">      objc-class-ref <span class="keyword">in</span> HLSDKFramework(HLAppsFlyerTracker.o)</span><br><span class="line">      objc-class-ref <span class="keyword">in</span> HLSDKFramework(HLGameService.o)</span><br><span class="line">ld: symbol(s) not found <span class="keyword">for</span> architecture arm64</span><br><span class="line">clang: error: linker <span class="built_in">command</span> failed with <span class="built_in">exit</span> code 1 (use -v to see invocation)</span><br></pre></td></tr></table></figure>
-
-<p>通过对比md5发现，文件发生了变化，替换正常文件即可！</p>
-<p>一般情况是使用了git lfs，但拉取时没有使用git lfs pull。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 报错的库 md5</span></span><br><span class="line">$ md5 AppsFlyerLib.framework/AppsFlyerLib</span><br><span class="line">MD5 (AppsFlyerLib.framework/AppsFlyerLib) = 81ee2da297f93f84336c607e388903f9</span><br><span class="line"></span><br><span class="line"><span class="comment"># 正常的库 md5</span></span><br><span class="line">$ md5 AppsFlyerLib.framework/AppsFlyerLib</span><br><span class="line">MD5 (AppsFlyerLib.framework/AppsFlyerLib) = 029b7caa1b69ffcd20b9807d98a07afb</span><br></pre></td></tr></table></figure>
+<p>是不是感觉非常简单 :)</p>
 
       
 
@@ -538,7 +546,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://blog.liuwenkai.cn/categories/%E5%85%B6%E5%AE%83/202209021314undefined-ios-arm64-but-attempting-to-link-with-file-built-for-unknown-unsupported-file.html" title="iOS-arm64 but attempting to link with file built for unknown-unsupported file">https://blog.liuwenkai.cn/categories/%E5%85%B6%E5%AE%83/202209021314undefined-ios-arm64-but-attempting-to-link-with-file-built-for-unknown-unsupported-file.html</a>
+    <a href="https://blog.liuwenkai.cn/categories/Cocos-Creator/201810082122-cocoscreator%E4%B8%AD%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%88%86%E4%BA%AB.html" title="CocosCreator中的微信小游戏分享">https://blog.liuwenkai.cn/categories/Cocos-Creator/201810082122-cocoscreator%E4%B8%AD%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%88%86%E4%BA%AB.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -551,7 +559,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
+            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB/" rel="tag"># 微信分享</a>
           
         </div>
       
@@ -564,8 +572,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/categories/%E5%85%B6%E5%AE%83/202208170000undefined-%E5%A6%82%E4%BD%95%E8%BF%81%E7%A7%BBwindows%E7%94%A8%E6%88%B7%E7%9B%AE%E5%BD%95.html" rel="next" title="如何迁移windows用户目录">
-                <i class="fa fa-chevron-left"></i> 如何迁移windows用户目录
+              <a href="/categories/Cocos2dx/201711172301-%E5%9C%A8cocos2dx-3-15%E4%B8%ADwss%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F.html" rel="next" title="在Cocos2dx-3.15中WSS的正确打开方式">
+                <i class="fa fa-chevron-left"></i> 在Cocos2dx-3.15中WSS的正确打开方式
               </a>
             
           </div>
@@ -574,8 +582,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/categories/%E5%85%B6%E5%AE%83/202209291632undefined-%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%A8%E6%8F%92%E4%BB%B6ui%E5%87%BA%E7%8E%B0%E9%A2%9C%E8%89%B2%E5%8F%A0%E5%8A%A0%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html" rel="prev" title="谷歌浏览器在插件UI出现颜色叠加显示异常的解决方案">
-                谷歌浏览器在插件UI出现颜色叠加显示异常的解决方案 <i class="fa fa-chevron-right"></i>
+              <a href="/categories/Cocos-Creator/201811122214-cocoscreator%E4%B8%AD%E7%9A%84%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html" rel="prev" title="CocosCreator中的屏幕适配解决方案">
+                CocosCreator中的屏幕适配解决方案 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -625,8 +633,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -757,6 +774,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果预览"><span class="nav-number">2.</span> <span class="nav-text">效果预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件目录"><span class="nav-number">3.</span> <span class="nav-text">文件目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地文件目录"><span class="nav-number">3.1.</span> <span class="nav-text">本地文件目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#远程文件目录（建议整个res上传）"><span class="nav-number">3.2.</span> <span class="nav-text">远程文件目录（建议整个res上传）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现代码"><span class="nav-number">4.</span> <span class="nav-text">实现代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
