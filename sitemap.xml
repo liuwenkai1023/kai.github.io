@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://blog.liuwenkai.cn/tags/index.html</loc>
+    <loc>https://blog.liuwenkai.cn/categories/index.html</loc>
     
     <lastmod>2022-12-15</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://blog.liuwenkai.cn/categories/index.html</loc>
+    <loc>https://blog.liuwenkai.cn/tags/index.html</loc>
     
     <lastmod>2022-12-15</lastmod>
     
@@ -142,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://blog.liuwenkai.cn/tags/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/</loc>
-    <lastmod>2022-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.liuwenkai.cn/tags/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2022-12-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -156,7 +149,7 @@
   </url>
   
   <url>
-    <loc>https://blog.liuwenkai.cn/tags/%E6%B5%81%E4%BD%93%E6%A8%A1%E6%8B%9F/</loc>
+    <loc>https://blog.liuwenkai.cn/tags/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/</loc>
     <lastmod>2022-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -164,6 +157,13 @@
   
   <url>
     <loc>https://blog.liuwenkai.cn/tags/Gitlab/</loc>
+    <lastmod>2022-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.liuwenkai.cn/tags/%E6%B5%81%E4%BD%93%E6%A8%A1%E6%8B%9F/</loc>
     <lastmod>2022-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
