@@ -19,46 +19,55 @@
       </tags>
   </entry>
   <entry>
-    <title>谷歌浏览器安装后不显示翻译按钮解决方法</title>
-    <url>/categories/%E5%85%B6%E5%AE%83/202208091638-%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E8%A3%85%E5%90%8E%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%BF%BB%E8%AF%91%E6%8C%89%E9%92%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</url>
-    <content><![CDATA[<p>安装Chrome谷歌浏览器后，不显示翻译按钮怎么办？解决方法如下:</p>
-<pre><code>1. 打开任意一个网站
+    <title>在Cocos2dx-3.15中WSS的正确打开方式</title>
+    <url>/categories/Cocos2dx/201711172301-%E5%9C%A8cocos2dx-3-15%E4%B8%ADwss%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><pre><code>因为项目原因，需要对WebSocket通信进行加密(即使用wss协议)
 
-2. 在网站空白处点击鼠标右键
+虽然官方示例里虽然有wss相关的例子，但是代码和文档里面却没有对参数的进行详细的说明
 
-3. 选择翻译中文，此时浏览器就会出现翻译选项
+导致在这个坑里浪费了一些时间，在这里记录一下
 </code></pre>
-]]></content>
-      <categories>
-        <category>其它</category>
-      </categories>
-      <tags>
-        <tag>Chrome</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CocosCreator中的微信小游戏分享</title>
-    <url>/categories/Cocos-Creator/201810082122-cocoscreator%E4%B8%AD%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%88%86%E4%BA%AB.html</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><pre><code>在论坛上看到有很多人问关于微信分享，加之公司叫把一款使用quick开发的游戏改微信小游戏也用到了分享
-
-所以我就在这里分享一下如何使用，希望能对有需要的人产生一些帮助
-</code></pre>
-<h3 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h3><p>我们先来看一下最终效果…..</p>
 <a id="more"></a>
-<p><img src="https://forum.cocos.com/uploads/default/original/3X/c/d/cd385cf64dd0f7268b0b1585a7544284a665cd51.png" alt="image"></p>
-<h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><h4 id="本地文件目录"><a href="#本地文件目录" class="headerlink" title="本地文件目录"></a>本地文件目录</h4><p>{项目目录}&#x2F;assets&#x2F;resources&#x2F;share&#x2F;</p>
-<p><img src="https://forum.cocos.com/uploads/default/original/3X/a/b/ab4021bbd10d6d97b1cbf618d2efb67158fa8ce2.png" alt="image">、</p>
-<h4 id="远程文件目录（建议整个res上传）"><a href="#远程文件目录（建议整个res上传）" class="headerlink" title="远程文件目录（建议整个res上传）"></a>远程文件目录（建议整个res上传）</h4><p>{远程服务器地址}&#x2F;res&#x2F;</p>
-<p><img src="https://forum.cocos.com/uploads/default/original/3X/7/b/7be75f7153000a598fd42c78ebb92bece155cc9c.png" alt="image"></p>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">test() &#123;</span><br><span class="line">    let title &#x3D; &quot;亲，您的智商已欠费，请充值。&quot;;</span><br><span class="line">    let fileName &#x3D; &quot;1.jpg&quot;</span><br><span class="line">    let message &#x3D; &#123;</span><br><span class="line">        title: &#96;$&#123;title&#125;&#96;,</span><br><span class="line">        imageUrl: this.getURL(&#96;resources&#x2F;share&#x2F;$&#123;fileName&#125;&#96;)</span><br><span class="line">    &#125;;</span><br><span class="line">    (&lt;any&gt;window).wx.shareAppMessage(message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getURL(url) &#123;</span><br><span class="line">    url &#x3D; cc.url.raw(url);</span><br><span class="line">    if (cc.loader.md5Pipe) &#123;</span><br><span class="line">        url &#x3D; cc.loader.md5Pipe.transformURL(url);</span><br><span class="line">    &#125;</span><br><span class="line">    try &#123;</span><br><span class="line">        this.wx.getFileSystemManager().accessSync(url)</span><br><span class="line">    &#125; catch (error) &#123;</span><br><span class="line">        url &#x3D; window.wxDownloader.REMOTE_SERVER_ROOT + &quot;&#x2F;&quot; + url;</span><br><span class="line">    &#125;</span><br><span class="line">    return url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码如下：</p>
+<p>官方示例代码如下：<a href="https://github.com/cocos2d/cocos2d-x/blob/v3/tests/lua-tests/src/ExtensionTest/WebProxyTest.lua#L88" target="_blank" rel="noopener">也可点击链接查看更详细代码</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wsSendText &#x3D; cc.WebSocket:create(&quot;wss:&#x2F;&#x2F;echo.websocket.org&quot;, &#123;&quot;myprotocol_1&quot;, &quot;myprotocol_2&quot;&#125;, &quot;cacert.pem&quot;)</span><br></pre></td></tr></table></figure>
+<p>看到这个示例代码，我当时是这样理解的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;wss:&#x2F;&#x2F;echo.websocket.org&quot;       -- 类型为string wss链接地址</span><br><span class="line">&#123;&quot;myprotocol_1&quot;, &quot;myprotocol_2&quot;&#125; -- 类型为table，里面是用户自定义协议名称</span><br><span class="line">&quot;cacert.pem&quot;                     -- 类型为string CA证书公钥地址</span><br></pre></td></tr></table></figure>
+<p>所以有了下面这段代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-- wss链接地址：wss:&#x2F;&#x2F;www.yygamesoft.com:8083</span><br><span class="line">-- 我们没有自定义协议，所以使用的是空table：&#123;&#125;</span><br><span class="line">-- 我们通过服务器生成的公钥：public.pem</span><br><span class="line">local sock &#x3D; cc.WebSocket:create(&quot;wss:&#x2F;&#x2F;www.yygamesoft.com:8083&quot;, &#123;&#125;, &quot;public.pem&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>是不是感觉非常简单 :)</p>
+<p>然后就各种报错，大致错误信息就像下面一样：</p>
+<pre><code>11-16 15:16:30.861: D/WebSocket.cpp(17297): scheme: wss, host: www.yygamesoft.com, port: 8082, path: 
+11-16 15:16:30.861: D/WebSocket.cpp(17297): CA file (/data/data/org.cocos2dx.yynn/files/server.pem) in writable path exists!
+11-16 15:16:30.871: D/WebSocket.cpp(17297): NOTICE: Creating Vhost &#39;default&#39; port -1, 1 protocols, IPv6 on
+11-16 15:16:30.891: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) Unhandled websocket event: 32
+11-16 15:16:30.901: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) Unhandled websocket event: 29
+11-16 15:16:30.961: D/WebSocket.cpp(17297): ERR: SSL connect error 337047686: error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed
+11-16 15:16:30.961: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) onConnectionError, state: 0 ...
+11-16 15:16:30.961: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) onConnectionClosed, state: 2 ...
+11-16 15:16:30.961: D/WebSocket.cpp(17297): onConnectionClosed, WebSocket (0xb8d69640) is closing by server.
+11-16 15:16:30.971: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) onConnectionClosed DONE!
+11-16 15:16:30.971: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) Unhandled websocket event: 45
+11-16 15:16:30.971: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) Unhandled websocket event: 33
+11-16 15:16:30.981: D/cocos2d-x debug info(17297): [LUA-print] -&gt; wsSendTextError 
+11-16 15:16:30.981: D/cocos2d-x debug info(17297): [LUA-print] -&gt; wsSendTextClose 
+11-16 15:16:30.991: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) onConnectionClosed, state: 3 ...
+11-16 15:16:31.751: D/cocos2d-x debug info(17297): [LUA-print] -&gt;无法连接到服务器,请退出！！
+</code></pre>
+<p>错误信息表示是证书出了问题，无法通过服务器SSL验证。不管证书从服务器生成还是从浏览器导出都会报错，这就十分尴尬。当时论坛并搜不到关于这方面的解答，就只有在论坛发帖求助。所幸的是，折腾了大半天，还是找到了解决方案。</p>
+<p>最终，解决方案就是不要使用自己的证书和自定义协议，使用默认的就行，感觉很嘲讽。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> -- 这里需要注意一下：cacert.pem文件需要手动复制到项目根目录中 </span><br><span class="line"> -- cacert.pem文件路径：引擎根目录&#x2F;tests&#x2F;cpp-tests&#x2F;Resources&#x2F;cacert.pem</span><br><span class="line">local socket &#x3D; cc.WebSocket:create(&quot;wss:&#x2F;&#x2F;www.yygamesoft.com:8083&quot;, &#123;&quot;myprotocol_1&quot;, &quot;myprotocol_2&quot;&#125;, &quot;cacert.pem&quot;)</span><br></pre></td></tr></table></figure>
+
+<!-- 这个帖子提供了较大的帮助，有兴趣可以去看看.....
+
+http://discuss.cocos2d-x.org/t/websocket-supports-ssl-connections/34611 -->
+
 ]]></content>
       <categories>
-        <category>Cocos Creator</category>
+        <category>Cocos2dx</category>
       </categories>
       <tags>
-        <tag>微信分享</tag>
+        <tag>WSS</tag>
       </tags>
   </entry>
   <entry>
@@ -88,6 +97,49 @@ ps：文章中已附上demo，Cocos Creator版本为2.0.2
       </categories>
       <tags>
         <tag>屏幕适配</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CocosCreator中的微信小游戏分享</title>
+    <url>/categories/Cocos-Creator/201810082122-cocoscreator%E4%B8%AD%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%88%86%E4%BA%AB.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><pre><code>在论坛上看到有很多人问关于微信分享，加之公司叫把一款使用quick开发的游戏改微信小游戏也用到了分享
+
+所以我就在这里分享一下如何使用，希望能对有需要的人产生一些帮助
+</code></pre>
+<h3 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h3><p>我们先来看一下最终效果…..</p>
+<a id="more"></a>
+<p><img src="https://forum.cocos.com/uploads/default/original/3X/c/d/cd385cf64dd0f7268b0b1585a7544284a665cd51.png" alt="image"></p>
+<h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><h4 id="本地文件目录"><a href="#本地文件目录" class="headerlink" title="本地文件目录"></a>本地文件目录</h4><p>{项目目录}&#x2F;assets&#x2F;resources&#x2F;share&#x2F;</p>
+<p><img src="https://forum.cocos.com/uploads/default/original/3X/a/b/ab4021bbd10d6d97b1cbf618d2efb67158fa8ce2.png" alt="image">、</p>
+<h4 id="远程文件目录（建议整个res上传）"><a href="#远程文件目录（建议整个res上传）" class="headerlink" title="远程文件目录（建议整个res上传）"></a>远程文件目录（建议整个res上传）</h4><p>{远程服务器地址}&#x2F;res&#x2F;</p>
+<p><img src="https://forum.cocos.com/uploads/default/original/3X/7/b/7be75f7153000a598fd42c78ebb92bece155cc9c.png" alt="image"></p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">test() &#123;</span><br><span class="line">    let title &#x3D; &quot;亲，您的智商已欠费，请充值。&quot;;</span><br><span class="line">    let fileName &#x3D; &quot;1.jpg&quot;</span><br><span class="line">    let message &#x3D; &#123;</span><br><span class="line">        title: &#96;$&#123;title&#125;&#96;,</span><br><span class="line">        imageUrl: this.getURL(&#96;resources&#x2F;share&#x2F;$&#123;fileName&#125;&#96;)</span><br><span class="line">    &#125;;</span><br><span class="line">    (&lt;any&gt;window).wx.shareAppMessage(message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getURL(url) &#123;</span><br><span class="line">    url &#x3D; cc.url.raw(url);</span><br><span class="line">    if (cc.loader.md5Pipe) &#123;</span><br><span class="line">        url &#x3D; cc.loader.md5Pipe.transformURL(url);</span><br><span class="line">    &#125;</span><br><span class="line">    try &#123;</span><br><span class="line">        this.wx.getFileSystemManager().accessSync(url)</span><br><span class="line">    &#125; catch (error) &#123;</span><br><span class="line">        url &#x3D; window.wxDownloader.REMOTE_SERVER_ROOT + &quot;&#x2F;&quot; + url;</span><br><span class="line">    &#125;</span><br><span class="line">    return url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>是不是感觉非常简单 :)</p>
+]]></content>
+      <categories>
+        <category>Cocos Creator</category>
+      </categories>
+      <tags>
+        <tag>微信分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>谷歌浏览器安装后不显示翻译按钮解决方法</title>
+    <url>/categories/%E5%85%B6%E5%AE%83/202208091638-%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E8%A3%85%E5%90%8E%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%BF%BB%E8%AF%91%E6%8C%89%E9%92%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</url>
+    <content><![CDATA[<p>安装Chrome谷歌浏览器后，不显示翻译按钮怎么办？解决方法如下:</p>
+<pre><code>1. 打开任意一个网站
+
+2. 在网站空白处点击鼠标右键
+
+3. 选择翻译中文，此时浏览器就会出现翻译选项
+</code></pre>
+]]></content>
+      <categories>
+        <category>其它</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
       </tags>
   </entry>
   <entry>
@@ -207,55 +259,40 @@ ps：文章中已附上demo，Cocos Creator版本为2.0.2
       </tags>
   </entry>
   <entry>
-    <title>在Cocos2dx-3.15中WSS的正确打开方式</title>
-    <url>/categories/Cocos2dx/201711172301-%E5%9C%A8cocos2dx-3-15%E4%B8%ADwss%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F.html</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><pre><code>因为项目原因，需要对WebSocket通信进行加密(即使用wss协议)
-
-虽然官方示例里虽然有wss相关的例子，但是代码和文档里面却没有对参数的进行详细的说明
-
-导致在这个坑里浪费了一些时间，在这里记录一下
-</code></pre>
+    <title>如何迁移windows用户目录</title>
+    <url>/categories/%E5%85%B6%E5%AE%83/202208170000-%E5%A6%82%E4%BD%95%E8%BF%81%E7%A7%BBwindows%E7%94%A8%E6%88%B7%E7%9B%AE%E5%BD%95.html</url>
+    <content><![CDATA[<h2 id="如何迁移windows用户目录"><a href="#如何迁移windows用户目录" class="headerlink" title="如何迁移windows用户目录"></a>如何迁移windows用户目录</h2><p><strong>1、进入PE系统</strong></p>
+<p><em>&#x3D;&#x3D;不会还有人不会进PE吧&#x3D;&#x3D;。:(</em></p>
+<p>下载一个微PE（<a href="https://www.wepe.com.cn/download.html" target="_blank" rel="noopener">下载地址</a>），双击运行安装，选择 &#x3D;&#x3D;立即安装进系统&#x3D;&#x3D;。<br>重启会自动进入系统选择页面，选择微PE系统进入即可。</p>
 <a id="more"></a>
-<p>代码如下：</p>
-<p>官方示例代码如下：<a href="https://github.com/cocos2d/cocos2d-x/blob/v3/tests/lua-tests/src/ExtensionTest/WebProxyTest.lua#L88" target="_blank" rel="noopener">也可点击链接查看更详细代码</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wsSendText &#x3D; cc.WebSocket:create(&quot;wss:&#x2F;&#x2F;echo.websocket.org&quot;, &#123;&quot;myprotocol_1&quot;, &quot;myprotocol_2&quot;&#125;, &quot;cacert.pem&quot;)</span><br></pre></td></tr></table></figure>
-<p>看到这个示例代码，我当时是这样理解的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;wss:&#x2F;&#x2F;echo.websocket.org&quot;       -- 类型为string wss链接地址</span><br><span class="line">&#123;&quot;myprotocol_1&quot;, &quot;myprotocol_2&quot;&#125; -- 类型为table，里面是用户自定义协议名称</span><br><span class="line">&quot;cacert.pem&quot;                     -- 类型为string CA证书公钥地址</span><br></pre></td></tr></table></figure>
-<p>所以有了下面这段代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-- wss链接地址：wss:&#x2F;&#x2F;www.yygamesoft.com:8083</span><br><span class="line">-- 我们没有自定义协议，所以使用的是空table：&#123;&#125;</span><br><span class="line">-- 我们通过服务器生成的公钥：public.pem</span><br><span class="line">local sock &#x3D; cc.WebSocket:create(&quot;wss:&#x2F;&#x2F;www.yygamesoft.com:8083&quot;, &#123;&#125;, &quot;public.pem&quot;)</span><br></pre></td></tr></table></figure>
+<p><strong>2、拷贝Users目录到到你需要迁到的位置</strong></p>
+<p>当然，如果你想只拷贝Users下的一个用户也是可以的哦，流程是一致的哈。</p>
+<p><strong>3、拷贝完成后，删除C盘中的Users目录</strong></p>
+<p><strong>4、为Users目录创建一个符号链接（注意盘符一定要匹配）</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># C:\Users =&gt; D:\Users</span></span><br><span class="line">mklink /D /J C:\Users D:\Users</span><br></pre></td></tr></table></figure>
+<p><strong>5、重启电脑</strong></p>
+<p>如果此时你的电脑正常进入了桌面，那么恭喜你，已经完成的用户目录的迁移。</p>
+<p><em>&#x3D;&#x3D;如果你的电脑为你创建了临时用户，那么也恭喜你，又可以学到新的知识了，请继续往下看吧。&#x3D;&#x3D;</em></p>
+<h2 id="如何完美解决windows出现临时用户问题"><a href="#如何完美解决windows出现临时用户问题" class="headerlink" title="如何完美解决windows出现临时用户问题"></a>如何完美解决windows出现临时用户问题</h2><p><strong>1、备份你的用户文件夹（如果它还在的话）</strong></p>
+<p>建议直接修改Users下的用户名，这样速度快一些。当然你也可以复制一份出来。 :(</p>
+<p><strong>2、win+R输入regedit打开注册表</strong><br><img src="http://cdn.liuwenkai.cn/pictures/picgo/8892fadb84fad408e24ce9bf00ab85d2.png" alt="image.png"></p>
+<p><strong>3、打开注册表后找到找到这个键值</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</span><br></pre></td></tr></table></figure>
 
-<p>然后就各种报错，大致错误信息就像下面一样：</p>
-<pre><code>11-16 15:16:30.861: D/WebSocket.cpp(17297): scheme: wss, host: www.yygamesoft.com, port: 8082, path: 
-11-16 15:16:30.861: D/WebSocket.cpp(17297): CA file (/data/data/org.cocos2dx.yynn/files/server.pem) in writable path exists!
-11-16 15:16:30.871: D/WebSocket.cpp(17297): NOTICE: Creating Vhost &#39;default&#39; port -1, 1 protocols, IPv6 on
-11-16 15:16:30.891: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) Unhandled websocket event: 32
-11-16 15:16:30.901: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) Unhandled websocket event: 29
-11-16 15:16:30.961: D/WebSocket.cpp(17297): ERR: SSL connect error 337047686: error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed
-11-16 15:16:30.961: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) onConnectionError, state: 0 ...
-11-16 15:16:30.961: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) onConnectionClosed, state: 2 ...
-11-16 15:16:30.961: D/WebSocket.cpp(17297): onConnectionClosed, WebSocket (0xb8d69640) is closing by server.
-11-16 15:16:30.971: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) onConnectionClosed DONE!
-11-16 15:16:30.971: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) Unhandled websocket event: 45
-11-16 15:16:30.971: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) Unhandled websocket event: 33
-11-16 15:16:30.981: D/cocos2d-x debug info(17297): [LUA-print] -&gt; wsSendTextError 
-11-16 15:16:30.981: D/cocos2d-x debug info(17297): [LUA-print] -&gt; wsSendTextClose 
-11-16 15:16:30.991: D/WebSocket.cpp(17297): WebSocket (0xb8d69640) onConnectionClosed, state: 3 ...
-11-16 15:16:31.751: D/cocos2d-x debug info(17297): [LUA-print] -&gt;无法连接到服务器,请退出！！
-</code></pre>
-<p>错误信息表示是证书出了问题，无法通过服务器SSL验证。不管证书从服务器生成还是从浏览器导出都会报错，这就十分尴尬。当时论坛并搜不到关于这方面的解答，就只有在论坛发帖求助。所幸的是，折腾了大半天，还是找到了解决方案。</p>
-<p>最终，解决方案就是不要使用自己的证书和自定义协议，使用默认的就行，感觉很嘲讽。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> -- 这里需要注意一下：cacert.pem文件需要手动复制到项目根目录中 </span><br><span class="line"> -- cacert.pem文件路径：引擎根目录&#x2F;tests&#x2F;cpp-tests&#x2F;Resources&#x2F;cacert.pem</span><br><span class="line">local socket &#x3D; cc.WebSocket:create(&quot;wss:&#x2F;&#x2F;www.yygamesoft.com:8083&quot;, &#123;&quot;myprotocol_1&quot;, &quot;myprotocol_2&quot;&#125;, &quot;cacert.pem&quot;)</span><br></pre></td></tr></table></figure>
-
-<!-- 这个帖子提供了较大的帮助，有兴趣可以去看看.....
-
-http://discuss.cocos2d-x.org/t/websocket-supports-ssl-connections/34611 -->
-
+<p><strong>4、直接删掉最长的几项（注意别删错了）</strong><br><img src="http://cdn.liuwenkai.cn/pictures/picgo/1e8747db87aee1abb3bd92efc5e22481.png" alt="image.png"></p>
+<p><strong>5、再次重启计算机</strong></p>
+<p>此时系统就正常进入桌面，并在Users下自动创建对应用户的文件夹。</p>
+<p>如果前面有备份的话，将《备份的用户文件夹内容》移动进《系统创建的用户文件夹》覆盖即可，别问为什么是移动不是复制，问就是快。</p>
+<p><strong>6、再次重启计算机</strong></p>
+<p>没问题，完美！！！!</p>
+<p><img src="http://cdn.liuwenkai.cn/pictures/picgo/f2c4575f24dcb8a2ba1ccf0da96a208e.gif" alt="image.gif"> </p>
 ]]></content>
       <categories>
-        <category>Cocos2dx</category>
+        <category>其它</category>
       </categories>
       <tags>
-        <tag>WSS</tag>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -292,43 +329,6 @@ http://discuss.cocos2d-x.org/t/websocket-supports-ssl-connections/34611 -->
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>至此，部署完成。访问 http:&#x2F;&#x2F;[username].github.io&#x2F;</p>
 <p>当然，现在使用的是Hexo默认主题，有点丑。可以到<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo主题商店</a>去选择一款你喜欢的吧。个人推荐<a href="https://theme-next.org/" target="_blank" rel="noopener">nexT</a>主题。</p>
-]]></content>
-      <categories>
-        <category>其它</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何迁移windows用户目录</title>
-    <url>/categories/%E5%85%B6%E5%AE%83/202208170000-%E5%A6%82%E4%BD%95%E8%BF%81%E7%A7%BBwindows%E7%94%A8%E6%88%B7%E7%9B%AE%E5%BD%95.html</url>
-    <content><![CDATA[<h2 id="如何迁移windows用户目录"><a href="#如何迁移windows用户目录" class="headerlink" title="如何迁移windows用户目录"></a>如何迁移windows用户目录</h2><p><strong>1、进入PE系统</strong></p>
-<p><em>&#x3D;&#x3D;不会还有人不会进PE吧&#x3D;&#x3D;。:(</em></p>
-<p>下载一个微PE（<a href="https://www.wepe.com.cn/download.html" target="_blank" rel="noopener">下载地址</a>），双击运行安装，选择 &#x3D;&#x3D;立即安装进系统&#x3D;&#x3D;。<br>重启会自动进入系统选择页面，选择微PE系统进入即可。</p>
-<a id="more"></a>
-<p><strong>2、拷贝Users目录到到你需要迁到的位置</strong></p>
-<p>当然，如果你想只拷贝Users下的一个用户也是可以的哦，流程是一致的哈。</p>
-<p><strong>3、拷贝完成后，删除C盘中的Users目录</strong></p>
-<p><strong>4、为Users目录创建一个符号链接（注意盘符一定要匹配）</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># C:\Users =&gt; D:\Users</span></span><br><span class="line">mklink /D /J C:\Users D:\Users</span><br></pre></td></tr></table></figure>
-<p><strong>5、重启电脑</strong></p>
-<p>如果此时你的电脑正常进入了桌面，那么恭喜你，已经完成的用户目录的迁移。</p>
-<p><em>&#x3D;&#x3D;如果你的电脑为你创建了临时用户，那么也恭喜你，又可以学到新的知识了，请继续往下看吧。&#x3D;&#x3D;</em></p>
-<h2 id="如何完美解决windows出现临时用户问题"><a href="#如何完美解决windows出现临时用户问题" class="headerlink" title="如何完美解决windows出现临时用户问题"></a>如何完美解决windows出现临时用户问题</h2><p><strong>1、备份你的用户文件夹（如果它还在的话）</strong></p>
-<p>建议直接修改Users下的用户名，这样速度快一些。当然你也可以复制一份出来。 :(</p>
-<p><strong>2、win+R输入regedit打开注册表</strong><br><img src="http://cdn.liuwenkai.cn/pictures/picgo/8892fadb84fad408e24ce9bf00ab85d2.png" alt="image.png"></p>
-<p><strong>3、打开注册表后找到找到这个键值</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</span><br></pre></td></tr></table></figure>
-
-<p><strong>4、直接删掉最长的几项（注意别删错了）</strong><br><img src="http://cdn.liuwenkai.cn/pictures/picgo/1e8747db87aee1abb3bd92efc5e22481.png" alt="image.png"></p>
-<p><strong>5、再次重启计算机</strong></p>
-<p>此时系统就正常进入桌面，并在Users下自动创建对应用户的文件夹。</p>
-<p>如果前面有备份的话，将《备份的用户文件夹内容》移动进《系统创建的用户文件夹》覆盖即可，别问为什么是移动不是复制，问就是快。</p>
-<p><strong>6、再次重启计算机</strong></p>
-<p>没问题，完美！！！!</p>
-<p><img src="http://cdn.liuwenkai.cn/pictures/picgo/f2c4575f24dcb8a2ba1ccf0da96a208e.gif" alt="image.gif"> </p>
 ]]></content>
       <categories>
         <category>其它</category>
